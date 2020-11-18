@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="win_container">
+    <div class="rnd_num">{{ win.rnd }} 당첨번호</div>
+    
+    <div class="nums">
+        {% for num in win.nums %}
+        <div class="nums_num {% if num <=10 %}yellow{% elif num <=20 %}blue{% elif num <=30 %}red{% elif num <=40 %}grey{% else %}green{% endif %}">
+            {{num}}
+        </div>
+        {% endfor %}
+
+        <div class="divider">+</div>
+        
+        <div class="nums_num {% if win.bonus <=10 %}yellow{% elif win.bonus <=20 %}blue{% elif win.bonus <=30 %}red{% elif win.bonus <=40 %}grey{% else %}green{% endif %}">
+            {{win.bonus}}
+        </div>
+    </div>
+</div>
+
+<form action="{{url_for("add")}}" method="GET">
+    <input class="btn" type="submit" value="로또 번호 추천" />
+</form>
+
+<div class="container">
+    {% for data in datas %}
+    <div class="nums">
+        {% for num in data %}
+        <div class="nums_num {% if num <=10 %}yellow{% elif num <=20 %}blue{% elif num <=30 %}red{% elif num <=40 %}grey{% else %}green{% endif %}">
+            {{num}}
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

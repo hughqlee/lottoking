@@ -1,0 +1,11 @@
+@import 'header.css';
+@import 'main.css';
+@import 'lotto.css';
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3A3A3A;
+}
