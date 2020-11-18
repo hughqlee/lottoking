@@ -2,12 +2,12 @@ import random
 from flask import Flask, render_template, request, redirect, url_for
 from scrapper import get_win
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 db = []
 
 
-@app.route("/")
+@application.route("/")
 def main():
     datas = db
     rnd, nums, bonus = get_win()
@@ -15,7 +15,7 @@ def main():
     return render_template("main.html", datas=datas, win=win)
 
 
-@app.route("/add/")
+@application.route("/add/")
 def add():
     nums = list()
     while len(nums) < 6:
@@ -28,4 +28,4 @@ def add():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(host="0.0.0.0", debug=True)
