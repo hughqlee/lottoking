@@ -1,0 +1,15 @@
+.logs {
+    padding: 20px;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.logs div a {
+    color: white;
+    text-decoration: none !important;
+}

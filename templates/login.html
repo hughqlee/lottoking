@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/login" class="submit_form" method="POST">
+    <div class="each_block form_title">
+        로그인
+    </div>
+    <div class="each_block">
+        <label for="username">유저네임 (ID)</label>
+        <input type="text" name='username' id='username' />
+    </div>
+    <div class="each_block">
+        <label for="password">비밀번호</label>
+        <input type="password" name='password' id='password'>
+    </div>
+    
+    <input type="submit" class='btn' value="로그인"/>
+</form>
+{% endblock content %}

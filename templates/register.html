@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/register" class="submit_form" method="POST">
+    <div class="each_block form_title">
+        회원가입
+    </div>
+    <div class="each_block">
+        <label for="username">유저네임 (ID)</label>
+        <input type="text" name='username' id='username' />
+    </div>
+    <div class="each_block">
+        <label for="password">비밀번호</label>
+        <input type="password" name='password' id='password'>
+    </div>
+    <div class="each_block">
+        <label for="password_cfm">비밀번호 확인</label>
+        <input type="password" name='password_cfm' id='password_cfm'>
+    </div>
+    
+    <input type="submit" class='btn' value="회원가입"/>
+</form>
+{% endblock content %}

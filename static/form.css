@@ -1,0 +1,29 @@
+.submit_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    padding: 16px 16px 8px 16px;
+    min-width: 400px;
+    border-radius: 4px;
+    background-color: #696969;
+}
+
+.each_block {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 4px 0;
+}
+
+.form_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0;
+    letter-spacing: 0.5em;
+    font-size: 20px;
+    font-weight: 600;
+}

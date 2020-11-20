@@ -7,18 +7,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="logs">
+    {% if session['logged_in'] == False %}
+    <div class="login">
+      <a href="{{url_for('login')}}">로그인</a>
+    </div>
+    <div class="">|</div>
+    <div class="register">
+      <a href="{{url_for('register')}}">회원가입</a>
+    </div>
+    {% endif %}
+    {% if session['logged_in'] == True %}
+    <div class="login">
+      <a href="{{url_for('logout')}}">로그아웃</a>
+    </div>
+    <div class="">|</div>
+    <div class="register">프로필</div>
+    {% endif %}
+  </div>
   <header>
-    <h1>
-      <span>L</span>
-      <span>o</span>
-      <span>t</span>
-      <span>t</span>
-      <span>o</span>
-      <span>K</span>
-      <span>i</span>
-      <span>n</span>
-      <span>g</span>
-    </h1>
+    <a href="{{url_for("main")}}">
+      <h1>
+        <span>L</span>
+        <span>o</span>
+        <span>t</span>
+        <span>t</span>
+        <span>o</span>
+        <span>K</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+      </h1>
+    </a>
   </header>
   <main>
    {% block content %}
