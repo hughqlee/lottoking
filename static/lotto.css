@@ -21,12 +21,23 @@
 
 .nums {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #696969;
     margin: 4px;
     padding: 4px 16px;
     min-width: 400px;
     border-radius: 4px;
+}
+
+.nums_nums {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nums_star a {
+  font-size: 36px;
+  color: gold !important;
 }
 
 .divider {

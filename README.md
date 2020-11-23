@@ -3,5 +3,5 @@
 flask/python project
 
 [X] Register / Login / Logout with database
-[] save nums into database
-[] Profile / Starred
+[X] save nums into database
+[X] Profile / Starred

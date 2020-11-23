@@ -26,11 +26,24 @@
 <div class="container">
     {% for data in datas %}
     <div class="nums">
-        {% for num in data %}
+        <div class="nums_nums">
+        {% for num in data[1] %}
         <div class="nums_num {% if num <=10 %}yellow{% elif num <=20 %}blue{% elif num <=30 %}red{% elif num <=40 %}grey{% else %}green{% endif %}">
             {{num}}
         </div>
         {% endfor %}
+        </div>
+        {% if session["logged_in"] == True %}
+        <div class="nums_star">
+            <a href="{{url_for('starred', id=data[0])}}">
+            {% if data[2] == True %}
+            ★
+            {% else %}
+            ☆
+            {% endif %}
+            </a>
+        </div>
+        {% endif %}
     </div>
     {% endfor %}
 </div>

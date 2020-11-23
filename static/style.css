@@ -3,6 +3,7 @@
 @import 'lotto.css';
 @import 'form.css';
 @import 'logs.css';
+@import 'profile.css';
 
 body {
     display: flex;

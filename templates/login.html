@@ -2,6 +2,7 @@
 
 {% block content %}
 <form action="/login" class="submit_form" method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
     <div class="each_block form_title">
         로그인
     </div>
