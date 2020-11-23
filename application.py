@@ -1,3 +1,4 @@
+import os
 import random
 import bcrypt
 from flask import Flask, render_template, request, redirect, url_for, session
@@ -6,7 +7,9 @@ from flask_sqlalchemy import SQLAlchemy
 from scrapper import get_win
 
 application = Flask(__name__)
-application.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:1324@localhost/mydb"
+application.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get(
+    "DB_URI", "mysql://root:1324@localhost/mydb"
+)
 csrf = CSRFProtect(application)
 db = SQLAlchemy(application)
 
@@ -156,7 +159,7 @@ def profile(username):
 
 
 if __name__ == "__main__":
-    application.debug = True
+    application.debug = False
     db.create_all()
     application.secret_key = "randodlongkeys"
     application.run(
